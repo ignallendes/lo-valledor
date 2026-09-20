@@ -1,14 +1,7 @@
-import sql from 'mssql';
+import sql from 'mssql/msnodesqlv8.js';
 
 const config = {
-  server: 'localhost', // Nota la doble barra invertida \\
-  database: 'lo-valledor',
-  parseJSON: true,
-  options: {
-    instanceName: 'NachoBD',
-    trustedConnection: true,   // Habilita Autenticación de Windows
-    trustServerCertificate: true // Para desarrollo local
-  }
+  connectionString: 'Driver={ODBC Driver 17 for SQL Server};Server=(localdb)\\NachoBD;Database=lo-valledor;Trusted_Connection=yes;'
 };
 
 export const getConnection = async () => {
