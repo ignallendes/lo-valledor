@@ -1,4 +1,7 @@
 import sql from 'mssql/msnodesqlv8.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const connectionString = `Driver={${process.env.DB_DRIVER}};Server=${process.env.DB_SERVER};Database=${process.env.DB_DATABASE};Trusted_Connection=yes;`;
 
