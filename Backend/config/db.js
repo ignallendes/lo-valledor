@@ -1,7 +1,9 @@
 import sql from 'mssql/msnodesqlv8.js';
 
+const connectionString = `Driver={${process.env.DB_DRIVER}};Server=${process.env.DB_SERVER};Database=${process.env.DB_DATABASE};Trusted_Connection=yes;`;
+
 const config = {
-  connectionString: 'Driver={ODBC Driver 17 for SQL Server};Server=(localdb)\\NachoBD;Database=lo-valledor;Trusted_Connection=yes;'
+  connectionString
 };
 
 export const getConnection = async () => {
